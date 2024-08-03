@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Description of site -->
+    <meta
+      name="description"
+      content="A simple AI chatting app. TrioChat - Get answers from three AIs at once."
+    />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon -->
+    <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./src/sass/main.scss" />
+
+    <!-- Script -->
+    <script type="module" src="./src/js/controller.js" defer></script>
+
+    <!-- Ttile -->
+    <title>TrioChat - Get answers from three AIs at once.</title>
+  </head>
+  <body>
+    <!-- 0) The main container -->
+    <main class="main-container">
+      <!-- 1) sub container -->
+      <div class="sub-container">
+        <!-- 1) i side nav bar -->
+        <aside class="side-nav-bar">
+          <h1 class="heading-primary">
+            <i class="ph ph-wechat-logo logo"></i>
+            <span>TrioChat</span>
+          </h1>
+          <div class="nav-container">
+            <ui class="nav">
+              <li class="nav-items active">
+                <a href="#" class="link">
+                  <img
+                    src="./assets/gemini.svg"
+                    alt="Google Gemini"
+                    class="side-menu-logo"
+                  />
+                  <img
+                    src="./assets/chatgpt.svg"
+                    alt="Chat GPT"
+                    class="side-menu-logo"
+                  />
+                  <img
+                    src="./assets/claude.svg"
+                    alt="Claude"
+                    class="side-menu-logo"
+                  />
+                  <h3 class="heading-tertiary">All</h3>
+                </a>
+              </li>
+              <li class="nav-items">
+                <a href="#" class="link"
+                  ><img
+                    src="./assets/gemini.svg"
+                    alt="Google Gemini"
+                    class="side-menu-logo"
+                  />
+                  <h3 class="heading-tertiary">Google Gemini</h3></a
+                >
+              </li>
+              <li class="nav-items">
+                <a href="#" class="link">
+                  <img
+                    src="./assets/chatgpt.svg"
+                    alt="Chat GPT"
+                    class="side-menu-logo"
+                  />
+                  <h3 class="heading-tertiary">Chat GPT</h3>
+                </a>
+              </li>
+              <li class="nav-items">
+                <a href="#" class="link"
+                  ><img
+                    src="./assets/claude.svg"
+                    alt="Claude"
+                    class="side-menu-logo"
+                  />
+                  <h3 class="heading-tertiary">Claude</h3></a
+                >
+              </li>
+            </ui>
+            <!-- 1) i a Extra features and details -->
+            <div>
+              <div class="change-theme-container">
+                <button class="change-theme">
+                  <i class="ph ph-moon" name="dark"></i>
+                  <!-- <i class="ph ph-sun-dim" name="light"></i> -->
+                  Dark / Light
+                </button>
+              </div>
+              <p class="text-sml margin-v-small-1">
+                Designed and developed by
+                <a
+                  href="https://www.linkedin.com/in/tejasavkhandelwal/"
+                  class="link"
+                  target="_blank"
+                  >@Tejasva Khandelwal</a
+                >
+              </p>
+
+              <p class="text-sml margin-v-small-1">
+                Design inspiration form
+                <a
+                  href="https://dribbble.com/Kevinduk"
+                  class="link"
+                  target="_blank"
+                  >@Kevin Dukkon</a
+                >
+              </p>
+
+              <p class="text-sml">
+                copyright &copy; 2024 TrioChat. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </aside>
+        <!-- 1) ii main chat area -->
+        <section class="main-chat-container">
+          <!--  -->
+          <div class="main-chat-container-outline">
+            <header class="main-chat-header">
+              <p class="text margin-v-small">Hello, user!</p>
+              <p class="text">Monday, October 23, 2024</p>
+            </header>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

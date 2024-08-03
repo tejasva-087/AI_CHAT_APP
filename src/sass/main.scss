@@ -1,0 +1,186 @@
+/* SCALE */
+/* 7.4  6.4  5.4  4.4  3.4  2.4  2re  1.8  1.6  1.4  1.3  1.0  0.8  0.6  0.4  0.2   */
+
+:root {
+  --color-white-1: #d1d3d4;
+  --color-white-2: #f4f7f8;
+  --color-white-3: #fff;
+
+  --color-black: #333;
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+
+  overflow: hidden;
+  scroll-behavior: smooth;
+  margin: 3.2rem;
+
+  background-color: var(--color-white-1);
+}
+
+.main-container {
+  max-width: 180rem;
+  margin: 0 auto;
+}
+
+.link:link,
+.link:visited {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1.4rem;
+}
+
+.margin-v-small-1 {
+  margin: 0.6rem 0;
+}
+
+.margin-v-small-2 {
+  margin: 0.8rem 0;
+}
+
+.margin-v-mid {
+  margin: 3.2rem 0;
+}
+
+.text {
+  line-height: 1.5;
+}
+
+.text-sml {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+// *************************
+// main
+// *************************
+.sub-container {
+  width: 95vw;
+  height: 92.5vh;
+  margin: auto;
+
+  background-color: var(--color-white-2);
+  border-radius: 1.8rem;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+}
+
+// *************************
+// side navbar
+// *************************
+.side-nav-bar {
+  padding: 5.2rem 2.6rem;
+}
+
+.heading-primary {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1.8rem;
+
+  padding-bottom: 2.8rem;
+  margin-bottom: 2.8rem;
+
+  border-bottom: 0.1rem solid var(--color-white-1);
+}
+
+.logo {
+  font-size: 3.2rem;
+  color: #fff;
+  background-color: var(--color-black);
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+}
+
+.nav-container {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.nav-items {
+  padding: 0 0.8rem;
+}
+
+.nav-items.active {
+  padding: 1.4rem 0.8rem;
+  background-color: var(--color-white-1);
+  width: 100%;
+  border-radius: 1rem;
+  margin-bottom: -1.4rem;
+}
+
+.side-menu-logo {
+  height: 2.8rem;
+}
+.change-theme-container {
+  margin-bottom: 2.4rem;
+  border-bottom: solid 0.1rem var(--color-white-1);
+}
+
+.change-theme {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1.2rem;
+  padding: 1.4rem 0.8rem;
+}
+
+.change-theme:hover {
+  cursor: pointer;
+}
+
+// *************************
+// Main chat container
+// *************************
+.main-chat-container-outline {
+  width: 95%;
+  height: 93%;
+  margin: auto;
+  margin-top: 2.5rem;
+  border-radius: 1.8rem;
+  background-color: var(--color-white-3);
+  border: solid 0.1rem var(--color-white-1);
+}
+
+.main-chat-header {
+  padding: 2.4rem 3.4rem;
+  border-bottom: solid 0.1rem var(--color-white-1);
+}

@@ -96,10 +96,10 @@
           <!-- 1) i a Extra features and details -->
           <div>
             <div class="change-theme-container">
-              <button class="change-theme btn">
-                <i class="ph ph-moon" name="dark"></i>
-                <!-- <i class="ph ph-sun-dim" name="light"></i> -->
-                Dark / Light
+              <button class="change-theme-btn btn" id="change-theme">
+                <i class="ph ph-sun change-theme-logo hidden"></i>
+                <i class="ph ph-sun-dim change-theme-logo"></i>
+                <span>Dark</span>
               </button>
             </div>
             <p class="text-sml margin-v-small-1">
@@ -203,7 +203,11 @@
               </div>
               <!-- 3) input box -->
               <form class="form-container">
-                <input type="text" class="input-field" />
+                <input
+                  type="text"
+                  class="input-field"
+                  placeholder="Enter prompt here"
+                />
                 <button class="btn form-btn">
                   <i class="ph ph-paper-plane-right"></i>
                 </button>

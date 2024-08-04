@@ -2,11 +2,13 @@ class View {
   #geminiChatEl = document.getElementById("gemini");
   #chatgptChatEl = document.getElementById("chatgpt");
   #claudeChatEl = document.getElementById("claude");
+  #changeThemeBtnEl = document.getElementById("change-theme");
 
   constructor() {
     this.setCopyright();
     this.handelNavClick();
     this.handelZoomBtnClick();
+    this.handleThemeClick();
   }
 
   setCopyright() {
@@ -67,6 +69,7 @@ class View {
 
     // 1) adding the event listener to the parent container
     parentContainer.addEventListener("click", (e) => {
+      e.preventDefault();
       // 2) getting the target element
       const target = e.target.parentNode.closest(".nav-items");
 
@@ -126,6 +129,56 @@ class View {
             console.error("Something gone wrong");
         }
       });
+    });
+  }
+
+  handleThemeClick() {
+    let swap = false;
+    this.#changeThemeBtnEl.addEventListener("click", (e) => {
+      const target = e.target.closest("#change-theme");
+      if (!target) return;
+
+      target.querySelectorAll(".change-theme-logo").forEach((logo) => {
+        logo.classList.toggle("hidden");
+      });
+
+      target.querySelector("span").innerText =
+        target.querySelector("span").innerText === "Dark" ? "Light" : "Dark";
+
+      if (!swap) {
+        // --color-white-1: #404040;
+        // --color-white-2: #171717;
+        // --color-white-3: #0a0a0a;
+        document.documentElement.style.setProperty(
+          "--color-white-1",
+          "#404040"
+        );
+        document.documentElement.style.setProperty(
+          "--color-white-2",
+          "#171717"
+        );
+        document.documentElement.style.setProperty(
+          "--color-white-3",
+          "#0a0a0a"
+        );
+        document.documentElement.style.setProperty("--color-black", "#fff");
+        swap = true;
+      } else {
+        // --color-white-1: #d1d3d4;
+        // --color-white-2: #f4f7f8;
+        // --color-white-3: #fff;
+        document.documentElement.style.setProperty(
+          "--color-white-1",
+          "#d1d3d4"
+        );
+        document.documentElement.style.setProperty(
+          "--color-white-2",
+          "#f4f7f8"
+        );
+        document.documentElement.style.setProperty("--color-white-3", "#fff");
+        document.documentElement.style.setProperty("--color-black", "#333");
+        swap = false;
+      }
     });
   }
 }

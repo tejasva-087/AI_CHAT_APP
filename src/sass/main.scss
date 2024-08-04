@@ -7,6 +7,20 @@
   --color-white-3: #fff;
 
   --color-black: #333;
+
+  --gemini-color-1: #439ddf;
+  --gemini-color-2: #4f87ed;
+
+  --chatgpt-color-1: #3fa68c;
+  --chatgpt-color-2: #70a496;
+
+  --claude-color-1: #cd876e;
+  --claude-color-2: #cc795c;
+}
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 0;
 }
 
 *,
@@ -93,7 +107,7 @@ body {
 // side navbar
 // *************************
 .side-nav-bar {
-  padding: 5.2rem 2.6rem;
+  padding: 5.2rem 2.6rem 0.2rem 1.4rem;
 }
 
 .heading-primary {
@@ -110,7 +124,7 @@ body {
 
 .logo {
   font-size: 3.2rem;
-  color: #fff;
+  color: var(--color-white-3);
   background-color: var(--color-black);
   padding: 0.6rem;
   border-radius: 0.6rem;
@@ -187,7 +201,7 @@ body {
 }
 
 .main-chat-area {
-  height: 86%;
+  height: 100%;
   width: 100%;
   padding: 2.4rem;
 }
@@ -201,16 +215,74 @@ body {
   gap: 1.8rem;
 }
 
-.chat-box-big {
-  height: 100%;
-  width: 100%;
-  grid-row: span 2;
-  border: 0.1rem solid var(--color-white-1);
+.chat-box {
   border-radius: 1.6rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 0.1rem solid var(--color-white-1);
+  width: 100%;
+}
+
+.chat-box-big {
+  height: 75vh;
+  grid-row: span 2;
 }
 .chat-box-mid {
-  width: 100%;
-  height: 100%;
-  border: 0.1rem solid var(--color-white-1);
+  height: 36vh;
+}
+
+.chat-box-header {
+  padding: 2.4rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-white-2);
+}
+
+.chat-box-header-logo {
+  width: 6.8rem;
+}
+
+// *************************
+// Main chat container
+// *************************
+.message-box {
+  padding: 1.4rem;
   border-radius: 1.6rem;
+  gap: 1.4rem;
+  width: 85%;
+  margin: 1.4rem;
+}
+
+.receiver {
+  border-bottom-left-radius: 0;
+  border: 0.1rem solid var(--color-white-1);
+}
+
+.sender {
+  border-bottom-right-radius: 0;
+  color: #fff;
+  margin-left: 12.5%;
+}
+
+.gemini-message-box {
+  background-image: linear-gradient(
+    120deg,
+    var(--gemini-color-1),
+    var(--gemini-color-2)
+  );
+}
+.chatgpt-message-box {
+  background-image: linear-gradient(
+    120deg,
+    var(--chatgpt-color-2),
+    var(--chatgpt-color-2)
+  );
+}
+
+.claude-message-box {
+  background-image: linear-gradient(
+    120deg,
+    var(--claude-color-1),
+    var(--claude-color-2)
+  );
 }

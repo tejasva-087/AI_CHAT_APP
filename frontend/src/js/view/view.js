@@ -13,6 +13,7 @@ class View {
     this.handleWindowResize();
     this.#setViewWhenLoad();
     this.handleMobileThemeClick();
+    this.hamdelMobileNavClick();
   }
 
   #removeActiveBtn() {
@@ -112,6 +113,17 @@ class View {
     }
   }
 
+  #handelNav(parentContainer, target) {
+    // 1) removing the current active class and adding it to the new active element
+    parentContainer.querySelector(".active").classList.remove("active");
+
+    // 2) adding the active class to the target element
+    target.classList.add("active");
+
+    // 3) adjusting the chat selection
+    this.#adjustChatSelection(target.dataset.chat);
+  }
+
   handelNavClick() {
     // 0) getting the parent nav bar container
     const parentContainer = document.getElementById("nav");
@@ -124,17 +136,21 @@ class View {
 
       // 3) if the target element is not found, return
       if (!target) return;
-
-      // 4) removing the current active class and adding it to the new active element
-      parentContainer.querySelector(".active").classList.remove("active");
-
-      // 5) adding the active class to the target element
-      target.classList.add("active");
-
-      // 6) adjusting the chat selection
-      this.#adjustChatSelection(target.dataset.chat);
+      this.#handelNav(parentContainer, target);
     });
   }
+
+  hamdelMobileNavClick() {
+    const parentContainer = document.querySelector(".mobile-nav-bar");
+    parentContainer.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = e.target.closest(".nav-items");
+      if (!target) return;
+      this.#handelNav(parentContainer, target);
+    });
+  }
+
+  handelMobileNavClick() {}
 
   handelZoomBtnClick() {
     const zoomBtnEl = document.querySelectorAll(".btn-zoom");

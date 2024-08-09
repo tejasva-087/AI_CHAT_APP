@@ -1,0 +1,59 @@
+:root {
+  --color-white-1: #d1d3d4;
+  --color-white-2: #f4f7f8;
+  --color-white-3: #fff;
+
+  --color-black: #333;
+
+  // --color-white-1: #404040;
+  // --color-white-2: #171717;
+  // --color-white-3: #0a0a0a;
+
+  --gemini-color-1: #439ddf;
+  --gemini-color-2: #4f87ed;
+
+  --chatgpt-color-1: #3fa68c;
+  --chatgpt-color-2: #70a496;
+
+  --claude-color-1: #cd876e;
+  --claude-color-2: #cc795c;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+:focus {
+  outline-color: var(--gemini-color-1);
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: auto;
+  background-color: var(--color-white-1);
+  color: var(--color-black);
+  transition: all 0.3s;
+}

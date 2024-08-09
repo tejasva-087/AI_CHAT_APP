@@ -1,0 +1,31 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  grid-column: span 2;
+  position: relative;
+}
+
+.input-field {
+  width: 100%;
+  padding: 1.8rem;
+  border-radius: 54rem;
+  border: 0.1rem solid var(--color-white-1);
+  font-size: 1.8rem;
+  color: VAR(--color-black);
+  background-color: var(--color-white-3);
+}
+
+.input-field::placeholder {
+  font-size: 1.8rem;
+}
+
+.form-btn {
+  background-color: var(--color-black);
+  color: var(--color-white-3);
+  font-size: 1.6rem;
+  padding: 1.7rem;
+  border-radius: 54rem;
+  position: absolute;
+  right: 5;
+}

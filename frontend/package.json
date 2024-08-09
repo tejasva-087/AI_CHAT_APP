@@ -1,0 +1,15 @@
+{
+  "name": "ai_chat_app",
+  "version": "1.0.0",
+  "description": "A simple AI chatting app",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "Tejasva Khandelwal",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0"
+  }
+}

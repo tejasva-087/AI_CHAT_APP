@@ -1,0 +1,59 @@
+.side-nav-bar {
+  padding: 5.2rem 2.6rem 0.2rem 1.4rem;
+}
+
+.logo {
+  font-size: 3.2rem;
+  color: var(--color-white-3);
+  background-color: var(--color-black);
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+}
+
+.nav-container {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.nav-items {
+  padding: 1.4rem 0.8rem;
+}
+
+.nav-items.active {
+  background-color: var(--color-white-1);
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.side-menu-logo {
+  height: 2.8rem;
+}
+.change-theme-container {
+  margin-bottom: 2.4rem;
+  border-bottom: solid 0.1rem var(--color-white-1);
+}
+
+.change-theme-btn {
+  font-size: 1.8rem;
+  justify-content: left;
+  color: var(--color-black);
+}
+
+.change-theme-logo {
+  background-color: var(--color-black);
+  color: var(--color-white-1);
+  font-size: 2.4rem;
+  padding: 0.6rem;
+  border-radius: 50%;
+}

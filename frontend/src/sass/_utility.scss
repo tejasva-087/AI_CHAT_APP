@@ -1,0 +1,60 @@
+.hidden {
+  display: none;
+}
+
+.link:link,
+.link:visited {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1.4rem;
+}
+
+.btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1.4rem 0.8rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.margin-v-small-1 {
+  margin: 0.6rem 0;
+}
+
+.margin-v-small-2 {
+  margin: 0.8rem 0;
+}
+
+.margin-v-mid {
+  margin: 3.2rem 0;
+}
+
+.text {
+  line-height: 1.5;
+}
+
+.text-sml {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.heading-primary {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1.8rem;
+
+  padding-bottom: 2.8rem;
+  margin-bottom: 2.8rem;
+
+  border-bottom: 0.1rem solid var(--color-white-1);
+}

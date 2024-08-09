@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Description of site -->
+    <meta
+      name="description"
+      content="A simple AI chatting app. TrioChat - Get answers from three AIs at once."
+    />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon -->
+    <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./src/sass/main.scss" />
+
+    <!-- Script -->
+    <script type="module" src="./src/js/controller.js" defer></script>
+
+    <!-- Ttile -->
+    <title>TrioChat - Get answers from three AIs at once.</title>
+  </head>
+  <body>
+    <!-- 1) sub container -->
+    <div class="sub-container">
+      <!--  -->
+      <!-- 1) i side nav bar -->
+      <aside class="side-nav-bar">
+        <h1 class="heading-primary">
+          <i class="ph ph-wechat-logo logo"></i>
+          <span>TrioChat</span>
+        </h1>
+        <div class="nav-container">
+          <ui class="nav" id="nav">
+            <li class="nav-items active" data-chat="all">
+              <a href="#" class="link">
+                <img
+                  src="./assets/gemini.svg"
+                  alt="Google Gemini"
+                  class="side-menu-logo"
+                />
+                <img
+                  src="./assets/chatgpt.svg"
+                  alt="Chat GPT"
+                  class="side-menu-logo"
+                />
+                <img
+                  src="./assets/claude.svg"
+                  alt="Claude"
+                  class="side-menu-logo"
+                />
+                <h3 class="heading-tertiary">All</h3>
+              </a>
+            </li>
+            <li class="nav-items" data-chat="gemini">
+              <a href="#" class="link"
+                ><img
+                  src="./assets/gemini.svg"
+                  alt="Google Gemini"
+                  class="side-menu-logo"
+                />
+                <h3 class="heading-tertiary">Google Gemini</h3></a
+              >
+            </li>
+            <li class="nav-items" data-chat="chatgpt">
+              <a href="#" class="link">
+                <img
+                  src="./assets/chatgpt.svg"
+                  alt="Chat GPT"
+                  class="side-menu-logo"
+                />
+                <h3 class="heading-tertiary">Chat GPT</h3>
+              </a>
+            </li>
+            <li class="nav-items" data-chat="claude">
+              <a href="#" class="link"
+                ><img
+                  src="./assets/claude.svg"
+                  alt="Claude"
+                  class="side-menu-logo"
+                />
+                <h3 class="heading-tertiary">Claude</h3></a
+              >
+            </li>
+          </ui>
+          <!-- 1) i a Extra features and details -->
+          <div>
+            <div class="change-theme-container">
+              <button class="change-theme-btn btn" id="change-theme">
+                <i class="ph ph-sun change-theme-logo hidden"></i>
+                <i class="ph ph-sun-dim change-theme-logo"></i>
+                <span>Dark</span>
+              </button>
+            </div>
+            <p class="text-sml margin-v-small-1">
+              Designed and developed by
+              <a
+                href="https://www.linkedin.com/in/tejasavkhandelwal/"
+                class="link"
+                target="_blank"
+              >
+                <strong>@Tejasva Khandelwal</strong>
+              </a>
+            </p>
+
+            <p class="text-sml margin-v-small-1">
+              Design inspiration form
+              <a
+                href="https://dribbble.com/Kevinduk"
+                class="link"
+                target="_blank"
+                ><strong>@Kevin Dukkon</strong></a
+              >
+            </p>
+
+            <p class="text-sml" id="copyright-text"></p>
+          </div>
+        </div>
+      </aside>
+      <!-- 1) ii main chat area -->
+      <section class="main-chat-container">
+        <div class="main-chat-container-outline">
+          <section class="main-chat-area">
+            <div class="chat-box-area">
+              <!-- 2) i Gemini chat container-->
+              <div class="chat-box chat-box-big chat-box-mid" id="gemini">
+                <header class="chat-box-header">
+                  <img
+                    src="./assets/Gemini-chat.png"
+                    alt="gemini chat logo"
+                    class="chat-box-header-logo"
+                  />
+                  <button class="btn btn-zoom" data-chat="gemini">
+                    <i class="ph ph-arrows-out-simple change-size-btn"></i>
+                  </button>
+                </header>
+                <div class="message-box sender gemini-message-box">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </div>
+                <div class="message-box receiver">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                  aperiam rem dolore adipisci nisi optio excepturi deleniti, eum
+                  alias magni ex laborum error dolor, id voluptas ullam cum
+                  consequatur. Maxime?
+                </div>
+              </div>
+              <!-- 2)ii open ai chat container-->
+              <div class="chat-box chat-box-mid chat-box-mid-1" id="chatgpt">
+                <header class="chat-box-header">
+                  <img
+                    src="./assets/OpenAI_chat.png"
+                    alt="gemini chat logo"
+                    class="chat-box-header-logo"
+                  />
+                  <button class="btn btn-zoom" data-chat="chatgpt">
+                    <i class="ph ph-arrows-out-simple change-size-btn"></i>
+                  </button>
+                </header>
+                <div class="message-box sender chatgpt-message-box">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </div>
+                <div class="message-box receiver">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                  aperiam rem dolore adipisci nisi optio excepturi deleniti, eum
+                  alias magni ex laborum error dolor, id voluptas ullam cum
+                  consequatur. Maxime?
+                </div>
+              </div>
+              <!-- 3) claude chat container-->
+              <div class="chat-box chat-box-mid chat-box-mid-2" id="claude">
+                <header class="chat-box-header">
+                  <img
+                    src="./assets/Claude_chat.png"
+                    alt="gemini chat logo"
+                    class="chat-box-header-logo"
+                  />
+                  <button class="btn btn-zoom" data-chat="claude">
+                    <i class="ph ph-arrows-out-simple change-size-btn"></i>
+                  </button>
+                </header>
+                <div class="message-box sender claude-message-box">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </div>
+                <div class="message-box receiver">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                  aperiam rem dolore adipisci nisi optio excepturi deleniti, eum
+                  alias magni ex laborum error dolor, id voluptas ullam cum
+                  consequatur. Maxime?
+                </div>
+              </div>
+              <!-- 3) input box -->
+              <form class="form-container">
+                <input
+                  type="text"
+                  class="input-field"
+                  placeholder="Enter prompt here"
+                />
+                <button class="btn form-btn">
+                  <i class="ph ph-paper-plane-right"></i>
+                </button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+.message-box {
+  padding: 1.4rem;
+  border-radius: 1.6rem;
+  gap: 1.4rem;
+  width: 85%;
+  margin: 1.4rem;
+}
+
+.receiver {
+  border-bottom-left-radius: 0;
+  border: 0.1rem solid var(--color-white-1);
+}
+
+.sender {
+  border-bottom-right-radius: 0;
+  color: #fff;
+  margin-left: 12.5%;
+}
+
+.gemini-message-box {
+  background-image: linear-gradient(
+    120deg,
+    var(--gemini-color-1),
+    var(--gemini-color-2)
+  );
+}
+.chatgpt-message-box {
+  background-image: linear-gradient(
+    120deg,
+    var(--chatgpt-color-2),
+    var(--chatgpt-color-2)
+  );
+}
+
+.claude-message-box {
+  background-image: linear-gradient(
+    120deg,
+    var(--claude-color-1),
+    var(--claude-color-2)
+  );
+}

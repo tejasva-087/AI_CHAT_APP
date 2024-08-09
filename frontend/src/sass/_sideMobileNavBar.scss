@@ -1,0 +1,39 @@
+.mobile-nav-bar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 6rem 3.4rem;
+  height: 100%;
+
+  @media (max-width: 37.5em) {
+    padding: 4.2rem 3.4rem;
+  }
+
+  @media (max-width: 25em) {
+    padding: 6rem 3rem;
+  }
+
+  &-nav-container {
+    height: 82%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    @media (max-width: 25em) {
+      height: 84%;
+    }
+  }
+
+  &-btn {
+    font-size: 3.4rem;
+    border-top: 0.1rem solid var(--color-white-1);
+    justify-self: flex-end;
+  }
+
+  &-logo {
+    margin-bottom: 0.6rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 0.1rem solid var(--color-white-1);
+  }
+}

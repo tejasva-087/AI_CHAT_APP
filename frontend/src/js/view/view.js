@@ -1,5 +1,3 @@
-import Animation from "./animations.js";
-
 class View {
   #geminiChatEl = document.getElementById("gemini");
   #chatgptChatEl = document.getElementById("chatgpt");
@@ -11,6 +9,53 @@ class View {
     this.handelNavClick();
     this.handelZoomBtnClick();
     this.handleThemeClick();
+    this.handleWindowResize();
+    this.#setViewWhenLoad();
+  }
+
+  #removeActiveBtn() {
+    const geminiBtn = document.getElementById("gemini-btn");
+    const chatgptBtn = document.getElementById("chatgpt-btn");
+    const claudeBtn = document.getElementById("claude-btn");
+    const btnSelectAll = document.getElementById("btn-select-all");
+
+    btnSelectAll.classList.remove("active");
+    geminiBtn.classList.remove("active");
+    chatgptBtn.classList.remove("active");
+    claudeBtn.classList.remove("active");
+  }
+
+  #setViewWhenLoad() {
+    const selectAllBtn = document.getElementById("btn-select-all");
+    const geminiBtn = document.getElementById("gemini-btn");
+    const sidebar = document.querySelector(".side-nav-bar");
+    const mobileNavBar = document.querySelector(".mobile-nav-bar");
+
+    if (window.screen.width <= 1000) {
+      this.#removeActiveBtn();
+      selectAllBtn.style.display = "none";
+      geminiBtn.classList.add("active");
+      this.#adjustChatSelection("gemini");
+    } else {
+      this.#removeActiveBtn();
+      selectAllBtn.style.display = "block";
+      selectAllBtn.classList.add("active");
+      this.#adjustChatSelection("all");
+    }
+
+    if (window.screen.width <= 900) {
+      sidebar.classList.add("hidden");
+      mobileNavBar.classList.remove("hidden");
+    } else {
+      sidebar.classList.remove("hidden");
+      mobileNavBar.classList.add("hidden");
+    }
+  }
+
+  handleWindowResize() {
+    window.addEventListener("resize", () => {
+      this.#setViewWhenLoad();
+    });
   }
 
   setCopyright() {
@@ -183,8 +228,6 @@ class View {
       }
     });
   }
-
-  sendMessage() {}
 }
 
 export default new View();

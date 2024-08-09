@@ -42,7 +42,7 @@
         </h1>
         <div class="nav-container">
           <ui class="nav" id="nav">
-            <li class="nav-items active" data-chat="all">
+            <li class="nav-items active" data-chat="all" id="btn-select-all">
               <a href="#" class="link">
                 <img
                   src="./assets/gemini.svg"
@@ -62,7 +62,7 @@
                 <h3 class="heading-tertiary">All</h3>
               </a>
             </li>
-            <li class="nav-items" data-chat="gemini">
+            <li class="nav-items" data-chat="gemini" id="gemini-btn">
               <a href="#" class="link"
                 ><img
                   src="./assets/gemini.svg"
@@ -72,7 +72,7 @@
                 <h3 class="heading-tertiary">Google Gemini</h3></a
               >
             </li>
-            <li class="nav-items" data-chat="chatgpt">
+            <li class="nav-items" data-chat="chatgpt" id="chatgpt-btn">
               <a href="#" class="link">
                 <img
                   src="./assets/chatgpt.svg"
@@ -82,7 +82,7 @@
                 <h3 class="heading-tertiary">Chat GPT</h3>
               </a>
             </li>
-            <li class="nav-items" data-chat="claude">
+            <li class="nav-items" data-chat="claude" id="claude-btn">
               <a href="#" class="link"
                 ><img
                   src="./assets/claude.svg"
@@ -127,6 +127,51 @@
           </div>
         </div>
       </aside>
+
+      <aside class="mobile-nav-bar hidden">
+        <div class="mobile-nav-bar-logo">
+          <i class="ph ph-wechat-logo logo"></i>
+        </div>
+        <div class="mobile-nav-bar-nav-container">
+          <ui class="nav" id="nav">
+            <li class="nav-items" data-chat="gemini" id="gemini-btn">
+              <a href="#" class="link"
+                ><img
+                  src="./assets/gemini.svg"
+                  alt="Google Gemini"
+                  class="side-menu-logo"
+                />
+              </a>
+            </li>
+            <li class="nav-items" data-chat="chatgpt" id="chatgpt-btn">
+              <a href="#" class="link">
+                <img
+                  src="./assets/chatgpt.svg"
+                  alt="Chat GPT"
+                  class="side-menu-logo"
+                />
+              </a>
+            </li>
+            <li class="nav-items" data-chat="claude" id="claude-btn">
+              <a href="#" class="link"
+                ><img
+                  src="./assets/claude.svg"
+                  alt="Claude"
+                  class="side-menu-logo"
+                />
+              </a>
+            </li>
+          </ui>
+          <button
+            class="change-theme-btn btn mobile-nav-bar-btn"
+            id="change-theme"
+          >
+            <i class="ph ph-sun change-theme-logo hidden"></i>
+            <i class="ph ph-sun-dim change-theme-logo"></i>
+          </button>
+        </div>
+      </aside>
+
       <!-- 1) ii main chat area -->
       <section class="main-chat-container">
         <div class="main-chat-container-outline">

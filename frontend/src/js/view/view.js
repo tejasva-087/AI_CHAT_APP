@@ -3,6 +3,7 @@ class View {
   #chatgptChatEl = document.getElementById("chatgpt");
   #claudeChatEl = document.getElementById("claude");
   #changeThemeBtnEl = document.getElementById("change-theme");
+  #swap = false;
 
   constructor() {
     this.setCopyright();
@@ -11,6 +12,7 @@ class View {
     this.handleThemeClick();
     this.handleWindowResize();
     this.#setViewWhenLoad();
+    this.handleMobileThemeClick();
   }
 
   #removeActiveBtn() {
@@ -179,53 +181,52 @@ class View {
     });
   }
 
+  #changeTheme(target, mobile = false) {
+    console.log("Helo");
+    target.querySelectorAll(".change-theme-logo").forEach((logo) => {
+      logo.classList.toggle("hidden");
+    });
+
+    if (!mobile) {
+      target.querySelector("span").innerText =
+        target.querySelector("span").innerText === "Dark" ? "Light" : "Dark";
+    }
+
+    if (!this.#swap) {
+      // --color-white-1: #404040;
+      // --color-white-2: #171717;
+      // --color-white-3: #0a0a0a;
+      document.documentElement.style.setProperty("--color-white-1", "#404040");
+      document.documentElement.style.setProperty("--color-white-2", "#171717");
+      document.documentElement.style.setProperty("--color-white-3", "#0a0a0a");
+      document.documentElement.style.setProperty("--color-black", "#fff");
+      this.#swap = true;
+    } else {
+      // --color-white-1: #d1d3d4;
+      // --color-white-2: #f4f7f8;
+      // --color-white-3: #fff;
+      document.documentElement.style.setProperty("--color-white-1", "#d1d3d4");
+      document.documentElement.style.setProperty("--color-white-2", "#f4f7f8");
+      document.documentElement.style.setProperty("--color-white-3", "#fff");
+      document.documentElement.style.setProperty("--color-black", "#333");
+      this.#swap = false;
+    }
+  }
+
   handleThemeClick() {
-    let swap = false;
     this.#changeThemeBtnEl.addEventListener("click", (e) => {
       const target = e.target.closest("#change-theme");
       if (!target) return;
-
-      target.querySelectorAll(".change-theme-logo").forEach((logo) => {
-        logo.classList.toggle("hidden");
-      });
-
-      target.querySelector("span").innerText =
-        target.querySelector("span").innerText === "Dark" ? "Light" : "Dark";
-
-      if (!swap) {
-        // --color-white-1: #404040;
-        // --color-white-2: #171717;
-        // --color-white-3: #0a0a0a;
-        document.documentElement.style.setProperty(
-          "--color-white-1",
-          "#404040"
-        );
-        document.documentElement.style.setProperty(
-          "--color-white-2",
-          "#171717"
-        );
-        document.documentElement.style.setProperty(
-          "--color-white-3",
-          "#0a0a0a"
-        );
-        document.documentElement.style.setProperty("--color-black", "#fff");
-        swap = true;
-      } else {
-        // --color-white-1: #d1d3d4;
-        // --color-white-2: #f4f7f8;
-        // --color-white-3: #fff;
-        document.documentElement.style.setProperty(
-          "--color-white-1",
-          "#d1d3d4"
-        );
-        document.documentElement.style.setProperty(
-          "--color-white-2",
-          "#f4f7f8"
-        );
-        document.documentElement.style.setProperty("--color-white-3", "#fff");
-        document.documentElement.style.setProperty("--color-black", "#333");
-        swap = false;
-      }
+      this.#changeTheme(target);
+    });
+  }
+  handleMobileThemeClick() {
+    const changeMobileThemeBtnEl = document.querySelector(
+      ".mobile-nav-bar-theme-btn"
+    );
+    changeMobileThemeBtnEl.addEventListener("click", (e) => {
+      const target = e.target.closest(".mobile-nav-bar-theme-btn");
+      this.#changeTheme(target, true);
     });
   }
 }

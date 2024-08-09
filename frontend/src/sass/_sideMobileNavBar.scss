@@ -14,21 +14,18 @@
   }
 
   &-nav-container {
-    height: 82%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-
-    @media (max-width: 25em) {
-      height: 84%;
-    }
   }
 
-  &-btn {
+  &-theme-btn {
     font-size: 3.4rem;
     border-top: 0.1rem solid var(--color-white-1);
     justify-self: flex-end;
+    padding-bottom: 0;
   }
 
   &-logo {
